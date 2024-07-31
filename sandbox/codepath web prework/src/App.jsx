@@ -11,10 +11,16 @@ import { action as addAction } from "./pages/AddCreator.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },
+  // Hu: HomePage functionality is good;
   { path: "showCreators", element: <ShowCreators />},
+  // Hu: 
   { path: "addCreator", element: <AddCreator />, action: addAction },
+  // Hu: addCreator functionality is good;
   { path: "creators/:creatorId", element: <ViewCreator /> },
+  // Hu: add delete option;
+  // Hu:
   { path: "creators/:creatorId/edit", element: <EditCreator /> },
+  // Hu:
 ]);
 
 function App() {
