@@ -1,0 +1,58 @@
+// ***
+// equivalent of EditCreator.jsx;
+// basically the same I feel;
+// edit: name, url, description, and imageURL;
+
+import {
+  Outlet,
+  NavLink,
+  Link,
+  useLoaderData,
+  Form,
+  redirect,
+  useNavigation,
+  useSubmit,
+  useNavigate,
+} from "react-router-dom";
+
+// import { createCreator } from "../Creator1.js";
+
+// export async function action({ request, param }) {
+//   console.log("Creator inserted successfully:", data);
+//   const formData = await request.formData();
+//   const updates = Object.fromEntries(formData);
+//   await createCreator(updates);
+//   return redirect(`/`);
+//   return;
+// }
+
+export default function AddCreator() {
+  const navigate = useNavigate();
+  
+  return (
+    <form method="post">
+      <label>
+        <span>Name: </span>
+        <input name="name" placeholder="name" />
+      </label>
+      <label>
+        <span>URL: </span>
+        <input name="url" placeholder="url" />
+      </label>
+      <label>
+        <span>Description: </span>
+        <textarea name="description" rows={6} />
+      </label>
+      <label>
+        <span>Image URL: </span>
+        <input name="imageURL" placeholder="imageURL" />
+      </label>
+      <p>
+        <button type="submit">Save</button>
+        <button type="button" onClick={() => navigate(-1)}>Cancel</button>
+      </p>
+    </form>
+  );
+}
+
+// <form> works not <Form>
