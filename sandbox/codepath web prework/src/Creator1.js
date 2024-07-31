@@ -19,7 +19,7 @@ export async function createCreator(form) {
   // Adding multiple properties using Object.assign()
   let creator = Object.assign(form, updates);
 
-  const { error } = await supabase.from("creators").insert(creator);
+  const { data, error } = await supabase.from("creators").insert([creator]);
 
   if (error) {
     console.error("Error inserting creator:", error);

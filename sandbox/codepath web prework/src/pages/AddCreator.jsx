@@ -17,20 +17,20 @@ import {
 
 // import { createCreator } from "../Creator1.js";
 
-// export async function action({ request, param }) {
-//   console.log("Creator inserted successfully:", data);
-//   const formData = await request.formData();
-//   const updates = Object.fromEntries(formData);
-//   await createCreator(updates);
-//   return redirect(`/`);
-//   return;
-// }
+export async function action({ request }) {
+  console.log("Creator inserted successfully:", data);
+  const formData = await request.formData();
+  const updates = Object.fromEntries(formData);
+  // await createCreator(updates);
+  return redirect(`/`);
+
+}
 
 export default function AddCreator() {
   const navigate = useNavigate();
   
   return (
-    <form method="post">
+    <Form method="post">
       <label>
         <span>Name: </span>
         <input name="name" placeholder="name" />
@@ -51,7 +51,7 @@ export default function AddCreator() {
         <button type="submit">Save</button>
         <button type="button" onClick={() => navigate(-1)}>Cancel</button>
       </p>
-    </form>
+    </Form>
   );
 }
 
