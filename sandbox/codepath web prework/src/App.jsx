@@ -11,8 +11,8 @@ import { action as addAction } from "./pages/AddCreator.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },
-  { path: "showCreators", element: <ShowCreators />, action: addAction },
-  { path: "addCreator", element: <AddCreator />},
+  { path: "showCreators", element: <ShowCreators />},
+  { path: "addCreator", element: <AddCreator />, action: addAction },
   { path: "creators/:creatorId", element: <ViewCreator /> },
   { path: "creators/:creatorId/edit", element: <EditCreator /> },
 ]);

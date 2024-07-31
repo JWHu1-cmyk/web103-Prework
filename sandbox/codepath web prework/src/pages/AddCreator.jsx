@@ -18,11 +18,19 @@ import {
 // import { createCreator } from "../Creator1.js";
 
 export async function action({ request }) {
-  console.log("Creator inserted successfully:", data);
-  const formData = await request.formData();
-  const updates = Object.fromEntries(formData);
-  // await createCreator(updates);
-  return redirect(`/`);
+  try {
+    const formData = await request.formData();
+    const updates = Object.fromEntries(formData);
+
+    // Attempt to create the creator and handle potential errors
+    await createCreator(updates);
+
+    return redirect(`/`);
+  } catch (error) {
+    console.error("Error inserting creator:", error);
+    alert("Error inserting creator: " + error.message);
+    return redirect(`/`);
+  }
 
 }
 
