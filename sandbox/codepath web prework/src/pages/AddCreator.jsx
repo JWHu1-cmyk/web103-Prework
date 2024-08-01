@@ -36,7 +36,7 @@ export async function action({ request }) {
 
 export default function AddCreator() {
   const navigate = useNavigate();
-  
+
   return (
     <Form method="post">
       <label>

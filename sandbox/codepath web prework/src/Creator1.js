@@ -1,11 +1,11 @@
 import supabase from "./client.js";
 
 export async function getCreators() {
-// hu: good
+  // hu: good
 
   try {
     const { data, error } = await supabase.from("creators").select();
-    
+
     if (error) {
       throw error;
     }
@@ -17,8 +17,8 @@ export async function getCreators() {
   }
 }
 
-export async function deleteCreators(id) {
-// hu: good
+export async function deleteCreator(id) {
+  // hu: good
   try {
     const { data, error } = await supabase
       .from('creators')
@@ -40,11 +40,11 @@ export async function updateCreators(id, name, url, description, imageURL) {
   try {
     const { data, error } = await supabase
       .from('creators')  // assuming the table name is 'creators'
-      .update({ 
-        name: name, 
-        url: url, 
-        description: description, 
-        imageURL: imageURL 
+      .update({
+        name: name,
+        url: url,
+        description: description,
+        imageURL: imageURL
       })
       .eq('id', id);
 
@@ -61,7 +61,7 @@ export async function updateCreators(id, name, url, description, imageURL) {
 
 
 export async function createCreator(form) {
-// hu: good
+  // hu: good
   try {
     let creator_id = Math.floor(Math.random() * 32768);
 
@@ -98,7 +98,7 @@ async function testCreator() {
   // Simulated form data
   // const form = {
   //   name: 'John Doe',
- 
+
   //   description: 'A sample creator description',
   //   imageURL: 'https://johndoe.com/image.jpg'
   // };
@@ -116,7 +116,7 @@ async function testCreator() {
   // const creators = await getCreators();
   // console.log(creators);
 
-    // ***
+  // ***
   // Simulated form data
   const form = {
     id: '22489',

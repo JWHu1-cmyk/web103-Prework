@@ -35,7 +35,12 @@ export default function Root() {
           <ul>
             {contacts.map((contact) => (
               <li key={contact.id}>
-                <NavLink to={`./creators/${contact.id}`}>
+                <NavLink
+                  to={`./creators/${contact.id}`}
+                  className={({ isActive, isPending }) =>
+                    isActive ? "active" : isPending ? "pending" : ""
+                  }
+                >
                   {contact.name ? (
                     <>
                       {contact.name}
