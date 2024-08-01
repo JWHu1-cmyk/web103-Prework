@@ -55,7 +55,7 @@ export default function ViewCreator() {
 
   return (
     <>
-      <div id="contact">
+      <div id="contact" >
         <div>
           <img
             key={creator.imageURL}

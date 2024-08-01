@@ -38,7 +38,7 @@ export default function AddCreator() {
   const navigate = useNavigate();
 
   return (
-    <Form method="post">
+    <Form method="post" id="contact-form">
       <label>
         <span>Name: </span>
         <input name="name" placeholder="name" />
@@ -57,7 +57,7 @@ export default function AddCreator() {
       </label>
       <p>
         <button type="submit">Save</button>
-        <button type="button" onClick={() => navigate(-1)}>Cancel</button>
+        <button type="button" className="cancel-button" onClick={() => navigate(-1)}>Cancel</button>
       </p>
     </Form>
   );

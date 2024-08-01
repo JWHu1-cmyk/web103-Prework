@@ -384,3 +384,57 @@ i {
 p {
   text-align: left;
 }
+
+.creatorverse {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f9;
+  color: #333;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.creatorverse h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #4a4a8a;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #4a4a8a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #6565b1;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 74, 138, 0.5);
+}
+
+.cancel-button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #4a4a8a !important;
+  color: #fff !important;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
