@@ -22,6 +22,9 @@ export default function Root() {
           <button type="button">ADD A CREATOR</button>
         </Link>
       </div>
+      <div>
+        <Outlet/>
+      </div>
     </div>
   );
 }

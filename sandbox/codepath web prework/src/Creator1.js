@@ -36,7 +36,7 @@ export async function deleteCreator(id) {
   }
 }
 
-export async function updateCreators(id, name, url, description, imageURL) {
+export async function updateCreator(id, name, url, description, imageURL) {
   try {
     const { data, error } = await supabase
       .from('creators')  // assuming the table name is 'creators'
@@ -46,7 +46,10 @@ export async function updateCreators(id, name, url, description, imageURL) {
         description: description,
         imageURL: imageURL
       })
-      .eq('id', id);
+      .eq('id', Number(id));
+
+
+      console.log(id);
 
     if (error) {
       throw error;
@@ -127,7 +130,7 @@ async function testCreator() {
   console.log(form.description);
 
   // Call createCreator with the simulated form data
-  await updateCreators(form.id, form.name, form.url, form.description, form.imageURL);
+  await updateCreator(form.id, form.name, form.url, form.description, form.imageURL);
 
 }
 

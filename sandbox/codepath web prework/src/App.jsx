@@ -8,12 +8,17 @@ import AddCreator from "./pages/AddCreator.jsx";
 
 // Optionally import actions if needed
 import { action as addAction } from "./pages/AddCreator.jsx";
-import { action as deleteAction } from "./pages/ViewCreator.jsx";
+
+import { loader as editCreatorLoader } from "./pages/EditCreator.jsx";
+import { action as editCreatorAction } from "./pages/EditCreator.jsx";
+
 import { loader as viewAllCreatorsLoader } from "./pages/ShowCreators.jsx"
+
 import { loader as viewCreatorLoader } from "./pages/ViewCreator.jsx"
+import { action as deleteAction } from "./pages/ViewCreator.jsx";
 
 const router = createBrowserRouter([
-  { path: "/", element: <HomePage /> },
+  { path: "/", element: <HomePage />,  children: [ { path: "showCreators", element: <ShowCreators />, loader: viewAllCreatorsLoader } ] },
   // Hu: HomePage functionality is good;
   { path: "showCreators", element: <ShowCreators />, loader: viewAllCreatorsLoader },
   // Hu: showCreators functionality is good;
@@ -23,7 +28,7 @@ const router = createBrowserRouter([
   // Hu: add delete option;
   // Hu: add edit page redirect;
   // Hu: ViewCreator functionality is good;
-  { path: "showCreators/creators/:creatorId/edit", element: <EditCreator /> },
+  { path: "showCreators/creators/:creatorId/edit", element: <EditCreator />, loader: editCreatorLoader, action: editCreatorAction },
   // Hu:
 ]);
 // // ***
