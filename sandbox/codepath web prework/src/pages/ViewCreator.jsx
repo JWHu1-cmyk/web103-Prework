@@ -57,13 +57,12 @@ export default function ViewCreator() {
     <>
       <div id="contact" >
         <div>
-          <img
-            key={creator.imageURL}
-            src={
-              creator.imageURL ||
-              `https://robohash.org/${creator.id}.png?size=200x200`
-            }
-          />
+        <img
+  key={creator.imageURL}
+  src={creator.imageURL || `https://robohash.org/${creator.id}.png?size=200x200`}
+/>
+
+          
         </div>
         <div>
           <h1>Name:</h1>

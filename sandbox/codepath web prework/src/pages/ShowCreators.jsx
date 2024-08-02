@@ -32,8 +32,12 @@ export default function Root() {
     <>
       <nav>
         {contacts && contacts.length ? (
+        <>
+          <div class="spacer"></div>
+
           <ul>
             {contacts.map((contact) => (
+              <>
               <li key={contact.id}>
                 <NavLink
                   to={`./creators/${contact.id}`}
@@ -41,17 +45,56 @@ export default function Root() {
                     isActive ? "active" : isPending ? "pending" : ""
                   }
                 >
+                  <div>
                   {contact.name ? (
                     <>
-                      {contact.name}
+                      Name:
+                      {contact.name},
+                      {" "}
+                    </>
+                    
+                  ) : (
+                    <>
+                      Name:No Name,
+                      {" "}
+                    </>
+                  )}
+                  </div>
+                  <div>
+                  {contact.url ? (
+                    <>
+                      URL:
+                      {contact.url},
+                      {" "}
                     </>
                   ) : (
-                    <i>No Name</i>
+                    <>
+                      URL:No URL,
+                      {" "}
+                    </>
                   )}
+                  </div>
+                  <div>
+                  {contact.description ? (
+                    <>
+                      Description:
+                      {contact.description},
+                      {" "}
+                    </>
+                  ) : (
+                    <>
+                      Description:No Description,
+                      {" "}
+                    </>
+                  )}
+                  </div>
                 </NavLink>
               </li>
+              <div class="spacer"></div>
+              </>
             ))}
           </ul>
+        </>
         ) : (
           <p>
             <i>No contacts</i>

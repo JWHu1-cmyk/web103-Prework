@@ -16,7 +16,7 @@ export async function action({ request, params }) {
 
     // Attempt to create the creator and handle potential errors
     // await updateCreator(updates.id, updates.name, updates.url, updates.description, updates.imageURL);
-    await updateCreator(Number(params.creatorId), updates.name);
+    await updateCreator(Number(params.creatorId), updates.name, updates.url, updates.description, updates.imageURL);
 
     return redirect(`/`);
   } catch (error) {
