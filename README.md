@@ -1,10 +1,10 @@
-# WEB103 Prework - *👉🏿 Name of App Here*
+# WEB103 Prework - *👉🏿 CreatorVerse*
 
-Submitted by: **👉🏿 your name here**
+Submitted by: **👉🏿 Junwei Hu**
 
-About this web app: **👉🏿 app description here**
+About this web app: **👉🏿 allows people to add, edit, delete creators **
 
-Time spent: **👉🏿 X** hours
+Time spent: **👉🏿 30** hours
 
 ## Required Features
 
